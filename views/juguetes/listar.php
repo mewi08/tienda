@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,8 @@
 </head>
 <body>
     <div class="container mt-3">
-        <h3>Listar Juguetes</h3>
+        <h1>Listar Juguetes</h1>
+        <a href="./crear.php" class="btn btn-sm btn-primary">Registrar</a>
         <hr>
         <table class="table table-striped" id="tabla-juguetes">
             <thead>
@@ -23,6 +24,7 @@
                 <th>Edad Mínima</th>
                 <th>Stock</th>
                 <th>Fecha Ingreso</th>
+                <th>Operaciones</th>
             </thead>
             <tbody>
                 <!-- Registros de la base de datos -->

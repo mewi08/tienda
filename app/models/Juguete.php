@@ -25,5 +25,30 @@ class Juguete extends Conexion {
         }
     }
 
+    public function agregar($registros=[]){
+        try{
+            $sql = "INSERT INTO juguetes
+            (nombre, descripcion, marca, precio, categoria, edadminima, stock, ingreso)
+            VALUES(?,?,?,?,?,?,?,?)";
 
+            $consulta = $this->conexion->prepare($sql);
+
+            $consulta->execute(
+                array(
+                    $registros['nombre'],
+                    $registros['descripcion'],
+                    $registros['marca'],
+                    $registros['precio'],
+                    $registros['categoria'],
+                    $registros['edadminima'],
+                    $registros['stock'],
+                    $registros['ingreso'],
+                )
+            );
+            return $this->conexion->lastInsertId();
+            }catch( Exception $e){
+                return -1;
+            }
+
+    }
 }

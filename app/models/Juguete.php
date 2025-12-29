@@ -99,6 +99,17 @@ class Juguete extends Conexion {
             return -1;
         }
     }
+    public function buscarPorId($id):array{
+        try{
+            $sql="SELECT * FROM juguetes WHERE estado = 1 AND id = ?";
+            $consulta= $this->conexion->prepare($sql);
+            $consulta->execute(array($id));
+           return $consulta ->fetchAll(PDO::FETCH_ASSOC);
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+
     public function buscarPorMarca($marca): array{
         try{
             $sql= "SELECT * FROM juguetes WHERE estado = 1 AND marca = ?";
@@ -121,7 +132,7 @@ class Juguete extends Conexion {
             $consulta->execute(array($categoria));
 
             return $consulta->fetchAll(PDO::FETCH_ASSOC);
-            
+
         }catch(Exception $e){
             die($e->getMessage());
         }

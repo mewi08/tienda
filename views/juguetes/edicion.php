@@ -9,11 +9,10 @@
 <body>
     <div class="container">
         <div>
-             <h3>Registro de juguetes</h3>
-             <p>Complete el formulario solicitado para agregar un nuevo elemento</p>
-             <a href="./index.php">Listar</a>
+             <h3>Edición de juguetes</h3>
+             <p>Complete el formulario solicitado para editar un nuevo elemento</p>
         </div>
-        <hr>
+
         <div>
         <form action="" id="formulario-juguetes">
             <div class="card">
@@ -97,7 +96,7 @@
                    
                 </div>
                 <div class="card-footer text-end">
-                    <button class="btn btn-primary" type="submit">Guardar</button>
+                    <button class="btn btn-info" type="submit">Actualizar</button>
                     <button class="btn btn-outline-secondary" type="reset">Cancelar</button>
                 </div>
             </div>
@@ -105,7 +104,7 @@
         </div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function(){
+       /* document.addEventListener("DOMContentLoaded", function(){
             document.querySelector("#formulario-juguetes").addEventListener("submit", function(event){
                 event.preventDefault()
                 if(confirm("¿Estás seguro de guardar?")){
@@ -139,7 +138,7 @@
                 })
             
             }
-            })
+            })*/
     </script>
 </body>
 </html>

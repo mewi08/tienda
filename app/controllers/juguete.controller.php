@@ -23,6 +23,26 @@ if(isset($_POST['operacion'])){
             $idobtenido = $juguete->agregar($datos) ;
             echo json_encode(['id'=>$idobtenido]);
             break;
+
+        case 'eliminar':
+            $filasafectadas = $juguete->eliminar($_POST['id']);
+            echo json_encode(['filas'=> $filasafectadas]);
+            break;
+
+        case 'actualizar':
+            break;
+        
+        case 'buscarPorId':
+            echo json_encode($juguete->buscarPorId($_POST['id']));
+            break;
+
+        case 'buscarPorMarca':
+            echo json_encode($juguete->buscarPorMarca($_POST['marca']));
+            break;
+        
+        case 'buscarPorCategoria':
+            echo json_encode($juguete->buscarPorCategoria($_POST['categoria']));
+            break;
     }
 
 }

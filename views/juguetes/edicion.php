@@ -11,6 +11,7 @@
         <div>
              <h3>Edición de juguetes</h3>
              <p>Complete el formulario solicitado para editar un nuevo elemento</p>
+              <a href="./index.php" class="btn btn-sm btn-outline-success">Listar</a>
         </div>
 
         <div>

@@ -13,7 +13,13 @@
 </head>
 <body>
     <div class="container mt-3">
-        <h3>Búsqueda por ID</h3>
+        <div>
+              <a href="./index.php" class="btn btn-sm btn-outline-success">Regresar</a>
+        </div>
+        <div>
+
+        
+        <h5>Búsqueda por ID</h5>
         <form action="" id="form-busqueda-id">
             <div class="mb-3">
                 <label for="idbuscado">ID Buscado</label>
@@ -30,7 +36,7 @@
         <hr>
 
         <!-- BÚSQUEDA POR MARCA -->
-         <h3>Búsqueda por Marca</h3>
+         <h5>Búsqueda por Marca</h5>
         <form action="" id="form-busqueda-marca">
             <div class="input-group">
                 <select id="marcas" class="form-select">
@@ -66,7 +72,7 @@
         <hr>
 
         <!-- BÚSQUEDA POR CATEGORÍA -->
-         <h3>Búsqueda por Categoría</h3>
+         <h5>Búsqueda por Categoría</h5>
         <form action="" id="form-busqueda-categoria">
             <div class="input-group">
                 <select id="categorias" class="form-select">
@@ -99,7 +105,7 @@
             </table>
         </form>
     </div>
-
+</div>
     <script>
         document.addEventListener("DOMContentLoaded", function(){
             //FUNCIÓN PARA BUSCAR POR ID

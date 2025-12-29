@@ -11,7 +11,7 @@
         <div>
              <h3>Registro de juguetes</h3>
              <p>Complete el formulario solicitado para agregar un nuevo elemento</p>
-             <a href="./index.php">Listar</a>
+             <a href="./index.php" class="btn btn-sm btn-outline-success">Listar</a>
         </div>
         <hr>
         <div>

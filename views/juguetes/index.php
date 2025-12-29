@@ -15,7 +15,8 @@
         <div>
             <h3>Mantenimiento de juguetes</h3>
             <p>Este módulo permitirá el listado, eliminación y edición</p>
-            <a href="./crear.php">Registrar</a>
+            <a href="./crear.php" class="btn btn-sm btn-outline-success">Registrar</a>
+            <a href="./buscar.php" class="btn btn-sm btn-outline-success">Buscar</a>
         </div>
         <hr>
         <div class="table-responsive">
@@ -64,7 +65,7 @@
                                 <td> ${element.ingreso} </td>
                                 <td>
                                     <a href='#'data-id='${element.id}' class='btn btn-sm btn-danger'>Eliminar</a>
-                                    <a href='#' class='btn btn-sm btn-info'>Editar</a>
+                                    <a href='./edicion.php?id=${element.id}' class='btn btn-sm btn-info'>Editar</a>
                                 </td>
                             </tr>`;
                         });

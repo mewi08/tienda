@@ -10,7 +10,7 @@ if(isset($_POST['operacion'])){
             echo json_encode($registros);
             break;
         case 'agregar':
-            $datos=[
+            $registro=[
                 'nombre'=> $_POST['nombre'],
                 'descripcion'=> $_POST['descripcion'],
                 'marca'=> $_POST['marca'],
@@ -20,7 +20,7 @@ if(isset($_POST['operacion'])){
                 'stock'=> $_POST['stock'],
                 'ingreso'=> $_POST['ingreso']
             ];
-            $idobtenido = $juguete->agregar($datos) ;
+            $idobtenido = $juguete->agregar($registro) ;
             echo json_encode(['id'=>$idobtenido]);
             break;
 
@@ -30,6 +30,19 @@ if(isset($_POST['operacion'])){
             break;
 
         case 'actualizar':
+             $registro=[
+                'nombre'=> $_POST['nombre'],
+                'descripcion'=> $_POST['descripcion'],
+                'marca'=> $_POST['marca'],
+                'precio'=> $_POST['precio'],
+                'categoria'=> $_POST['categoria'],
+                'edadminima'=> $_POST['edadminima'],
+                'stock'=> $_POST['stock'],
+                'ingreso'=> $_POST['ingreso'],
+                'id'=> $_POST['id']
+            ];
+           $filasafectadas=$juguete->actualizar($registro) ;
+           echo json_encode(['filas'=> $filasafectadas]);
             break;
         
         case 'buscarPorId':

@@ -14,7 +14,7 @@
         </div>
 
         <div>
-        <form action="" id="formulario-juguetes">
+        <form action="" id="formulario-editar">
             <div class="card">
                 <div class="card-header">Formulario</div>
                 <div class="card-body">
@@ -104,41 +104,40 @@
         </div>
     </div>
     <script>
-       /* document.addEventListener("DOMContentLoaded", function(){
-            document.querySelector("#formulario-juguetes").addEventListener("submit", function(event){
-                event.preventDefault()
-                if(confirm("¿Estás seguro de guardar?")){
-                    guardarDatos()
-                }
+       document.addEventListener("DOMContentLoaded",function(){
+        let parametro = new URLSearchParams(location.search)
+        let id = parametro.get('id')
+        
+        function buscarJuguete(idbuscado){
+            const datos = new FormData()
+            datos.append("operacion", "buscarPorId")
+            datos.append("id",idbuscado)
+
+            fetch('../../app/controllers/juguete.controller.php',{
+                method: 'POST',
+                body:datos
             })
-            function guardarDatos(){
-                const datos = new FormData()
-                datos.append("operacion","agregar")
-                datos.append("nombre",document.querySelector("#nombre").value)
-                datos.append("descripcion", document.querySelector("#descripcion").value)            
-                datos.append("marca", document.querySelector("#marca").value)
-                datos.append("precio", document.querySelector("#precio").value)
-                datos.append("categoria", document.querySelector("#categoria").value)
-                datos.append("edadminima", document.querySelector("#edadminima").value)
-                datos.append("stock", document.querySelector("#stock").value)
-                datos.append("ingreso", document.querySelector("#ingreso").value)
-                
-                fetch('../../app/controllers/juguete.controller.php',{
-                    method: 'POST',
-                    body: datos
-                })
                 .then(response => response.json())
-                .then(data=>{
-                    if(data.id>0){
-                        document.querySelector("#formulario-juguetes").reset()
-                        alert("Datos guardados correctamente")
-                    }else{
-                        alert("No se pudo concretar el proceso")
-                    }
+                .then(data =>{
+                    document.querySelector("#nombre").value= data[0].marca;
+                    document.querySelector("#descripcion").value= data[0].descripcion
+                    document.querySelector("#marca").value= data[0].marca
+                    document.querySelector("#precio").value= data[0].precio
+                    document.querySelector("#categoria").value= data[0].categoria
+                    document.querySelector("#edadminima").value= data[0].edadminima
+                    document.querySelector("#stock").value= data[0].stock
+                    document.querySelector("#ingreso").value= data[0].ingreso
+
                 })
-            
-            }
-            })*/
+                .catch(e=>{
+                    console.error(e)
+                })
+        }
+
+        buscarJuguete(id)
+
+
+        })
     </script>
 </body>
 </html>

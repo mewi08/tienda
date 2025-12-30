@@ -78,7 +78,7 @@ class Juguete extends Conexion {
                 edadminima = ?, 
                 stock = ?, 
                 ingreso = ?,
-                estado = 1
+                estado = 1,
                 updated = now()
             WHERE id = ?
             ";

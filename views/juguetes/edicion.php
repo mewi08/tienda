@@ -22,12 +22,12 @@
                     <!-- formulario de registro -->
                     <div class="form-floating mb-2">
                         <input type="text" id="nombre" class="form-control" required>
-                        <label for="nombre" id="form-label">Nombre</label>
+                        <label for="nombre" class="form-label">Nombre</label>
                     </div>
 
                     <div class="form-floating mb-2">
                         <input type="text" id="descripcion" class="form-control" required>
-                        <label for="descripcion" id="form-label">Descripción</label>
+                        <label for="descripcion" class="form-label">Descripción</label>
                     </div>
 
                     <!-- Tiene 12 columnas -->
@@ -120,7 +120,7 @@
             })
                 .then(response => response.json())
                 .then(data =>{
-                    document.querySelector("#nombre").value= data[0].marca;
+                    document.querySelector("#nombre").value= data[0].nombre
                     document.querySelector("#descripcion").value= data[0].descripcion
                     document.querySelector("#marca").value= data[0].marca
                     document.querySelector("#precio").value= data[0].precio
@@ -135,10 +135,44 @@
                 })
         }
 
-        buscarJuguete(id)
+       
 
-
+        document.querySelector("#formulario-editar").addEventListener("submit",function(event){
+            event.preventDefault()
+            if(confirm('¿Está seguro de editar el resgitro?')){
+                actualizarRegistro()
+            }
         })
+        function actualizarRegistro(){
+            const datos = new FormData()
+            datos.append("operacion","actualizar")
+            datos.append("nombre",document.querySelector("#nombre").value)
+            datos.append("descripcion", document.querySelector("#descripcion").value)            
+            datos.append("marca", document.querySelector("#marca").value)
+            datos.append("precio", document.querySelector("#precio").value)
+            datos.append("categoria", document.querySelector("#categoria").value)
+            datos.append("edadminima", document.querySelector("#edadminima").value)
+            datos.append("stock", document.querySelector("#stock").value)
+            datos.append("ingreso", document.querySelector("#ingreso").value)
+            datos.append("id",id)
+
+            fetch('../../app/controllers/juguete.controller.php',{
+                    method: 'POST',
+                    body: datos
+            })
+                .then(response => response.json())
+                .then(data=>{
+                    if(data.filas>0){
+                        document.querySelector("#formulario-editar").reset()
+                        alert("Datos guardados correctamente")
+                    }else{
+                        alert("No se pudo concretar el proceso")
+                    }
+                })
+        }
+
+         buscarJuguete(id)
+      })
     </script>
 </body>
 </html>

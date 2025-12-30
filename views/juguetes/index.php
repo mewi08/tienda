@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-3">
         <div>
             <h3>Mantenimiento de juguetes</h3>
             <p>Este módulo permitirá el listado, eliminación y edición</p>

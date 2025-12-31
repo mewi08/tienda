@@ -43,7 +43,7 @@ class Juguete extends Conexion {
                     $registro['edadminima'],
                     $registro['stock'],
                     $registro['ingreso'],
-                    $registro['estado']=1,
+                    1,
                 )
             );
             return $this->conexion->lastInsertId();

@@ -6,7 +6,7 @@
     <title>Búsqueda</title>
 
      <!-- Estilos de bootstrap -->
-    <link rel="stylesheet" href="   https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
 
      <!-- Botones boostrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -14,9 +14,9 @@
 <body>
     <div class="container mt-3">
         <div>
-              <a href="./index.php" class="btn btn-sm btn-outline-success">Regresar</a>
+              <a href="./index.php" class="btn btn-sm btn-outline-success">Listar</a>
         </div>
-        <div>
+        
 
         
         <h5>Búsqueda por ID</h5>

@@ -15,6 +15,7 @@
         <div>
             <h3>Mantenimiento de juguetes</h3>
             <p>Este módulo permitirá el listado, eliminación y edición</p>
+            <a href="../../index.html" class="btn btn-sm btn-outline-success">Inicio</a>
             <a href="./crear.php" class="btn btn-sm btn-outline-success">Registrar</a>
             <a href="./buscar.php" class="btn btn-sm btn-outline-success">Buscar</a>
         </div>
